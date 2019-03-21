@@ -8,7 +8,7 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 
-def tweet_lesson(tweet_lines):
+def tweet_temp(tweet_lines):
 
     print(tweet_lines[0])
     last_tweet = api.update_status(tweet_lines[0])

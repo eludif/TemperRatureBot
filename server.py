@@ -1,6 +1,7 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import ast
 from io import BytesIO
+from twitter_bot import tweet_temp
 
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
@@ -17,6 +18,8 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         r = ast.literal_eval(r)
         temp = r.get("temp")
         print(temp)
+        tweet = "The temperature in the laboratory is above the threshold. It's " + temp + u'\N{DEGREE SIGN}'
+        tweet_temp(tweet)
         self.send_response(200)
         self.end_headers()
         response = BytesIO()
