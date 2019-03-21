@@ -18,7 +18,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         r = ast.literal_eval(r)
         temp = r.get("temp")
         print(temp)
-        tweet = "The temperature in the laboratory is above the threshold. It's " + temp + u'\N{DEGREE SIGN}'
+        tweet = "The temperature in the laboratory is above the threshold. It's " + temp + ' ' + u'\N{DEGREE SIGN}' + 'C'
         tweet_temp(tweet)
         self.send_response(200)
         self.end_headers()
